@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="Speech Command Recognition with CNNs - Benjamin Bellenchia, Brian Patterson, Eric Dutan, Kai Perez">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="A MATLAB machine learning project that classifies spoken commands from mel spectrograms using a CNN with noise augmentation, silence detection, and unknown-input handling.">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="speech recognition, command recognition, convolutional neural network, CNN, mel spectrograms, MATLAB, Google Speech Commands, audio classification, machine learning">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Benjamin Bellenchia, Eric Dutan, Kai Perez, Brian Patterson">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="UAlbany CNSE ECE465">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="Speech Command Recognition with CNNs">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="A MATLAB machine learning project that classifies spoken commands from mel spectrograms using a CNN with noise augmentation, silence detection, and unknown-input handling.">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="static/images/training plot 6.PNG">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Speech Command Recognition with CNNs - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Benjamin Bellenchia, Brian Patterson, Eric Dutan, Kai Perez">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="speech recognition">
+  <meta property="article:tag" content="machine learning">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="Speech Command Recognition with CNNs">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="A MATLAB machine learning project that classifies spoken commands from mel spectrograms using a CNN with noise augmentation, silence detection, and unknown-input handling.">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="static/images/training plot 6.PNG">
+  <meta name="twitter:image:alt" content="Speech Command Recognition with CNNs - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Speech Command Recognition with CNNs">
+  <meta name="citation_author" content="Bellenchia, Benjamin">
+  <meta name="citation_author" content="Patterson, Brian">
+  <meta name="citation_author" content="Dutan, Eric">
+  <meta name="citation_author" content="Perez, Kai">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="UAlbany CNSE ECE465 Showcase Day">
+  <meta name="citation_pdf_url" content="static/pdfs/ECE465_Project_Progress_Report_2.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>Speech Command Recognition with CNNs - Benjamin Bellenchia, Brian Patterson, Eric Dutan, Kai Perez | ECE465 Machine Learning Project</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Speech Command Recognition with CNNs",
+    "description": "A MATLAB machine learning project that classifies spoken commands from mel spectrograms using a CNN with noise augmentation, silence detection, and unknown-input handling.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Benjamin Bellenchia",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "UAlbany CNSE"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Brian Patterson",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "UAlbany CNSE"
+        }
+      }
+    ],
+    "datePublished": "2026-04-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "UAlbany CNSE ECE465 Showcase Day"
+    },
+    "url": "",
+    "image": "static/images/training plot 6.PNG",
+    "keywords": ["speech recognition", "command recognition", "CNN", "mel spectrograms", "MATLAB", "Google Speech Commands"],
+    "abstract": "This project presents a MATLAB-based speech command recognition system that converts one-second, 16 kHz audio clips into normalized 64 x 64 mel spectrogram images for classification with a CNN. The final model recognizes go, no, stop, and yes while handling silence and unknown inputs using noise augmentation and confidence thresholding.",
+    "citation": "Bellenchia et al., Speech Command Recognition with CNNs, UAlbany CNSE ECE465, 2026.",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": ""
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Speech Recognition"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Machine Learning"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "UAlbany CNSE",
+    "url": "https://www.albany.edu/cnse",
+    "logo": "static/images/favicon.ico",
+    "sameAs": [
+      "https://www.albany.edu/cnse"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Project Links Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View Project Links from Our Lab">
+      <i class="fas fa-flask"></i>
+      Project Links
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>Project Links from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <!-- TODO: Replace with your lab's related works -->
+        <a href="#results-carousel" class="work-item" target="_blank">
+          <div class="work-info">
+            <!-- TODO: Replace with actual paper title -->
+            <h5>Final CNN Results</h5>
+            <!-- TODO: Replace with brief description -->
+            <p>Training progress and final confusion matrix for the speech-command CNN.</p>
+            <!-- TODO: Replace with venue and year -->
+            <span class="work-venue">Results</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <!-- TODO: Add more related works or remove extra items -->
+        <a href="#BibTeX" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Project Summary</h5>
+            <p>Summary of the MATLAB pipeline, dataset, and model design.</p>
+            <span class="work-venue">Overview</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="#main-content" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Code and Demo</h5>
+            <p>Live recording demo that predicts commands using the trained model.</p>
+            <span class="work-venue">Demo</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">Speech Command Recognition with CNNs</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="#" target="_blank">Ben Bellenchia</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Kai Perez</a><sup>*</sup>,</span>
+                <span class="author-block">
+                    <a href="#" target="_blank">Brian Patterson</a><sup>*</sup>,
+                </span>
+                <span class="author-block">
+                    <a href="#" target="_blank">Eric Dutan</a><sup>*</sup>
+                </span>
+</div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block">UAlbany CNSE ECE465 - Machine Learning Project<br>Showcase Day 2026</span>
+                    <!-- TODO: Remove this line if no equal contribution -->
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="static/pdfs/ECE465_Project_Progress_Report_2.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Progress Report</span>
+                      </a>
+                    </span>
+
+                    <!-- TODO: Add your supplementary material PDF or remove this section -->
+                    <span class="link-block">
+                      <a href="static/pdfs/ECE465 Machine Learning Project Assignment 2.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>First Update</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/Eric-Dutan/ML_Project" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="static/images/DeepLearningSpeechRecognitionExample_01.png"
+             alt="Deep learning speech recognition example"
+             height="100%">
+      <!-- TODO: Replace with your video description -->
+      <h2 class="subtitle has-text-centered">
+        Audio clips are converted into mel spectrogram images, allowing a convolutional neural network to classify spoken commands while rejecting silence and uncertain inputs.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+            <p>
+                This project presents a MATLAB-based speech command recognition system that converts
+                one-second, 16 kHz audio clips into normalized 64 × 64 mel spectrogram images for
+                classification with a convolutional neural network (CNN). The final model, modelv5,
+                classifies the spoken commands “go,” “no,” “stop,” and “yes,” while also detecting
+                silence and using an “unknown” class to reject uncertain inputs. The dataset was split
+                into 70% training, 15% validation, and 15% testing data, with random time shifting,
+                gain variation, and background-noise augmentation added to improve robustness. The
+                final CNN uses three convolution layers with batch normalization, max pooling,
+                dropout, and fully connected classification layers. After the model predicts a command,
+                a 75% confidence threshold is used so low-confidence predictions are labeled as
+                unknown instead of being forced into a command class. This design trades a small amount
+                of clean-command accuracy for a more realistic and reliable speech-command system,
+                reaching about 91.6% validation accuracy while handling noisy, silent, and uncertain
+                inputs.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Model Results</h2>
+      <div class="content">
+        <p>
+          The final CNN model, <strong>modelv5</strong>, classifies <strong>go</strong>, <strong>no</strong>,
+          <strong>stop</strong>, and <strong>yes</strong>, while also handling <strong>silence</strong> and
+          uncertain inputs with an <strong>unknown</strong> class. Audio clips are one second long at
+          16 kHz, normalized, converted into 64 × 64 mel spectrograms, and split into 70% training,
+          15% validation, and 15% testing data.
+        </p>
+        <p>
+          The final architecture uses three convolution layers with batch normalization, max pooling,
+          dropout, and fully connected classification layers. Earlier four-command models reached about
+          93.9% accuracy on the cleaner command-only task, while the final model reached about
+          <strong>91.6% validation accuracy</strong> after adding noise augmentation, silence detection,
+          and unknown-input rejection for a more realistic speech-command system.
+        </p>
+      </div>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <img src="static/images/training plot 6.PNG" alt="Final CNN training progress plot" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Final CNN training progress: validation accuracy reached about 91.6% after adding noise augmentation, silence handling, and an unknown class.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/confusion chart for modelv5.PNG" alt="Final model confusion matrix with go, no, silence, stop, unknown, and yes classes" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Final model confusion matrix showing performance across go, no, stop, yes, silence, and unknown inputs.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/confusion chart for modelv2.PNG" alt="Earlier four-command CNN confusion matrix" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Earlier four-command CNN result: the cleaner go/no/stop/yes model reached about 93.9% accuracy before silence and unknown handling were added.
+       </h2>
+     </div>
+     <div class="item">
+      <img src="static/images/Training Plot 3.PNG" alt="Earlier CNN training progress plot" loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Model progression: adding convolution layers improved accuracy, while later versions traded some clean-command accuracy for better robustness.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Project Demonstration</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <p class="subtitle">
+            The MATLAB demo records a one-second audio sample, normalizes the signal, converts it into a 64 × 64 mel spectrogram, and passes it through the trained CNN to predict the spoken command.
+          </p>
+          <div class="content has-text-left">
+            <p>
+              The demo reports the predicted label and confidence score. If the model confidence is below
+              <strong>75%</strong>, the result is labeled as <strong>unknown</strong> rather than forcing the
+              recording into one of the four command classes. This helps the system reject silence,
+              background noise, or speech that does not clearly match a trained command.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Model Progression</h2>
+      <div id="model-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <img src="static/images/Training Plot 1.png" alt="Initial CNN training progress plot" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Initial CNN baseline: about 83.9% validation accuracy.
+          </h2>
+        </div>
+        <div class="item item-video2">
+          <img src="static/images/Training Plot 4.PNG" alt="Improved CNN training progress plot" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Intermediate model: added deeper CNN layers and improved validation accuracy.
+          </h2>
+        </div>
+        <div class="item item-video3">
+          <img src="static/images/training plot 6.PNG" alt="Final CNN training progress plot" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Final model: added noise augmentation, dropout, silence, and unknown handling for a more realistic speech-command system.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Progress Report</h2>
+
+      <!-- TODO: Replace with your poster PDF -->
+      <iframe  src="static/pdfs/ECE465_Project_Progress_Report_2.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{BellenchiaSpeechCommand2026,
+  title={Speech Command Recognition with CNNs},
+  author={Bellenchia, Benjamin and Patterson, Brian and Dutan, Eric and Perez, Kai},
+  howpublished={UAlbany CNSE ECE465 Machine Learning Project},
+  year={2026},
+  note={MATLAB implementation using mel spectrograms, CNN classification, noise augmentation, silence detection, and unknown-input handling}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
