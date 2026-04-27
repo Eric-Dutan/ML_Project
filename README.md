@@ -1,6 +1,6 @@
 # Speech Command Recognition with CNNs
 
-This website presents our ECE465 Machine Learning project on speech command recognition using convolutional neural networks.
+This repo presents our ECE465 Machine Learning project on speech command recognition using convolutional neural networks.
 
 ## Project Overview
 
