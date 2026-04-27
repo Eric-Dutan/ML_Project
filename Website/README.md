@@ -20,31 +20,23 @@ The project classifies short spoken commands by converting audio clips into mel 
 
 ## Website Files
 
-Main page:
+Images should be placed in: `static/images/`
 
-```text
-index.html
-
-Images should be placed in:
-
-static/images/
-
-PDFs should be placed in:
-
-static/pdfs/
+PDFs should be placed in: `static/pdfs/`
 
 CSS and JavaScript files are located in:
 
-static/css/
-static/js/
-How to View the Website
+- `static/css/`
+- `static/js/`
 
-Open index.html in a web browser.
+## How to View the Website
+
+Open `index.html` in a web browser.
 
 For best results, keep the folder structure unchanged so that all image, PDF, CSS, and JavaScript links work correctly.
 
-Authors
+## Authors
 
-Benjamin Bellenchia, Brian Patterson, Eric Dutan, and Kai Perez
-UAlbany CNSE ECE465 - Machine Learning Project
+Benjamin Bellenchia, Brian Patterson, Eric Dutan, and Kai Perez  
+UAlbany CNSE ECE465 - Machine Learning Project  
 Showcase Day 2026
