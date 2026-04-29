@@ -52,7 +52,9 @@ Website/static/js/
 
 ## Demo
 
-The main demo records a short audio clip, predicts the spoken command using the CNN, and then runs speaker recognition only when the command is predicted as `go`.
+-You can download the file project_Demo and launch in matlab to try the demo for yourself
+
+-The main demo records a short audio clip, predicts the spoken command using the CNN, and then runs speaker recognition only when the command is predicted as `go`.
 
 # Matlab toolboxes needed:
   - melSpectrogram
