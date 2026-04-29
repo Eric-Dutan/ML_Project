@@ -557,6 +557,43 @@
 </section>
 <!-- End limitations and future work -->
 
+
+
+<!-- Final presentation summary -->
+<section class="section" id="final-presentation-summary">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Final Presentation Summary</h2>
+
+    <div class="content">
+      <h3 class="title is-4">Latest Performance and Achievements</h3>
+      <p>
+        Since the previous session, our project has progressed from basic command classification into a more complete voice-recognition system. The latest CNN model recognizes the commands <strong>“go,” “no,” “stop,” and “yes”</strong>, while also handling <strong>silence</strong> and uncertain inputs through an <strong>unknown</strong> class, noise augmentation, and confidence thresholding. We also added a speaker-recognition stage for the command <strong>“go”</strong>, where MFCC features are passed into a GMM model to identify which group member spoke.
+      </p>
+
+      <h3 class="title is-4">Lessons Learned</h3>
+      <p>
+        A major lesson we learned was that voice-recognition systems are very sensitive to recording conditions. Even when two microphones sound similar to people, they can produce different audio features that affect model accuracy. We also learned that recognizing a spoken command and identifying the speaker are related but separate challenges that require different preprocessing and model approaches.
+      </p>
+
+      <h3 class="title is-4">Obstacles Faced</h3>
+      <p>
+        The main obstacles were reducing false predictions on silence or noisy inputs, improving robustness in less controlled audio conditions, and getting speaker recognition to work reliably. The speaker-recognition model was especially sensitive to microphone differences, which initially caused inconsistent predictions.
+      </p>
+
+      <h3 class="title is-4">Technical Solutions</h3>
+      <p>
+        We addressed these issues by adding <strong>silence</strong> and <strong>unknown</strong> classes, applying noise augmentation, using a confidence threshold to reject uncertain CNN predictions, and adding an MFCC-based GMM speaker-recognition model for the word <strong>“go.”</strong> For the speaker model, we improved reliability by standardizing the recording setup and retraining with more consistent audio samples.
+      </p>
+
+      <h3 class="title is-4">Individual Contributions</h3>
+      <p>
+        Ben worked on the <strong>CNN command-recognition model</strong>. Eric worked on the <strong>SVM command-recognition approach</strong>. Brian worked on <strong>voice recognition</strong>. Kai added the <strong>unknown class, silence class, and noise augmentation</strong> to the command dataset.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End final presentation summary -->
+
 <!-- Paper poster -->
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -590,7 +627,6 @@
   howpublished={UAlbany CNSE ECE465 Machine Learning Project},
   year={2026},
   note={MATLAB implementation using CNN command classification and GMM speaker recognition}
-}
 }</code></pre>
     </div>
 </section>
