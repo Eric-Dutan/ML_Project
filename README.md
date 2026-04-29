@@ -1,42 +1,57 @@
-# Speech Command Recognition with CNNs
+# Speech Command and Speaker Recognition
 
-This repo presents our ECE465 Machine Learning project on speech command recognition using convolutional neural networks.
+ECE465 Machine Learning project using MATLAB to recognize spoken commands and identify the speaker for the command **"go"**.
 
-## Project Overview
+## Overview
 
-The project classifies short spoken commands by converting audio clips into mel spectrogram images and passing them through a CNN. The final system recognizes the commands `go`, `no`, `stop`, and `yes`, while also handling `silence` and uncertain inputs using an `unknown` class.
+This project uses a two-stage voice recognition pipeline:
 
-## Key Features
+1. A **CNN** classifies short speech clips as `go`, `no`, `stop`, `yes`, `silence`, or `unknown`.
+2. If the CNN detects the word `go`, a **GMM speaker recognition model** uses MFCC features to predict which team member spoke.
+
+The goal is to build a simple voice-command system that can reject uncertain inputs and demonstrate speaker identification.
+
+## Main Features
 
 - MATLAB implementation
-- Google Speech Commands v0.02 dataset
-- Mel spectrogram preprocessing
-- 64×64 image-based CNN inputs
-- Three-layer CNN architecture
-- Batch normalization, max pooling, and dropout
-- Noise augmentation and random gain/time-shift augmentation
-- Real-time MATLAB audio demo
-- Confidence thresholding for unknown inputs
+- Google Speech Commands dataset
+- Mel spectrogram preprocessing for CNN input
+- CNN command classification
+- Silence and unknown-input handling
+- Confidence thresholding for uncertain predictions
+- MFCC feature extraction for speaker recognition
+- GMM-based speaker identification for the word `go`
+- Real-time MATLAB recording demo
 
-## Website Files
+## Repository Structure
 
-Images should be placed in: `static/images/`
+Data Set/                Dataset files
+Website/                 Project website files
+model_CNN/               CNN training and command-recognition model files
+model_SVM/               Earlier SVM model files
+voice_recognition_GMM/   GMM speaker-recognition files
+ML_Project_Demo.mlx      Main MATLAB live demo
+README.md                Project summary
 
-PDFs should be placed in: `static/pdfs/`
+## Website
 
-CSS and JavaScript files are located in:
+Open the website from:
 
-- `static/css/`
-- `static/js/`
+Website/index.html
 
-## How to View the Website
+Website assets are stored in:
 
-Open `index.html` in a web browser.
+Website/static/images/
+Website/static/pdfs/
+Website/static/css/
+Website/static/js/
 
-For best results, keep the folder structure unchanged so that all image, PDF, CSS, and JavaScript links work correctly.
+## Demo
+
+The main demo records a short audio clip, predicts the spoken command using the CNN, and then runs speaker recognition only when the command is predicted as `go`.
 
 ## Authors
 
 Benjamin Bellenchia, Brian Patterson, Eric Dutan, and Kai Perez  
-UAlbany CNSE ECE465 - Machine Learning Project  
+UAlbany CNSE ECE465 Machine Learning Project  
 Showcase Day 2026
