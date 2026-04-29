@@ -55,11 +55,11 @@ Website/static/js/
 The main demo records a short audio clip, predicts the spoken command using the CNN, and then runs speaker recognition only when the command is predicted as `go`.
 
 # Matlab toolboxes needed:
-  melSpectrogram
-  imresize
-  classify
-  mfcc
-  fitgmdist/pdf support from trained GMM objects
+  - melSpectrogram
+  - imresize
+  - classify
+  - mfcc
+  - fitgmdist/pdf support from trained GMM objects
 
 ## Authors
 
