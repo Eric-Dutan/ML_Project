@@ -6,11 +6,11 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="Speech Command Recognition with CNNs - Benjamin Bellenchia, Brian Patterson, Eric Dutan, Kai Perez">
+  <meta name="title" content="Speech Command and Speaker Recognition with CNNs and GMMs - Benjamin Bellenchia, Brian Patterson, Eric Dutan, Kai Perez">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="A MATLAB machine learning project that classifies spoken commands from mel spectrograms using a CNN with noise augmentation, silence detection, and unknown-input handling.">
+  <meta name="description" content="A MATLAB machine learning project that classifies spoken commands with a CNN, then identifies the speaker of the “go” command using MFCC features and GMMs.">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="speech recognition, command recognition, convolutional neural network, CNN, mel spectrograms, MATLAB, Google Speech Commands, audio classification, machine learning">
+  <meta name="keywords" content="speech recognition, speaker recognition, command recognition, convolutional neural network, CNN, Gaussian mixture model, GMM, MFCC, mel spectrograms, MATLAB, audio classification, machine learning">
   <!-- TODO: List all authors -->
   <meta name="author" content="Benjamin Bellenchia, Eric Dutan, Kai Perez, Brian Patterson">
   <meta name="robots" content="index, follow">
@@ -21,9 +21,9 @@
   <!-- TODO: Replace with your institution or lab name -->
   <meta property="og:site_name" content="UAlbany CNSE ECE465">
   <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="Speech Command Recognition with CNNs">
+  <meta property="og:title" content="Speech Command and Speaker Recognition with CNNs and GMMs">
   <!-- TODO: Same as description above -->
-  <meta property="og:description" content="A MATLAB machine learning project that classifies spoken commands from mel spectrograms using a CNN with noise augmentation, silence detection, and unknown-input handling.">
+  <meta property="og:description" content="A MATLAB machine learning project that classifies spoken commands with a CNN, then identifies the speaker of the “go” command using MFCC features and GMMs.">
   <!-- TODO: Replace with your actual website URL -->
   <meta property="og:url" content="">
   <!-- TODO: Create a 1200x630px preview image and update path -->
@@ -44,15 +44,15 @@
   <!-- TODO: Replace with first author's Twitter handle -->
   <meta name="twitter:creator" content="">
   <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="Speech Command Recognition with CNNs">
+  <meta name="twitter:title" content="Speech Command and Speaker Recognition with CNNs and GMMs">
   <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="A MATLAB machine learning project that classifies spoken commands from mel spectrograms using a CNN with noise augmentation, silence detection, and unknown-input handling.">
+  <meta name="twitter:description" content="A MATLAB machine learning project that classifies spoken commands with a CNN, then identifies the speaker of the “go” command using MFCC features and GMMs.">
   <!-- TODO: Same as social preview image above -->
   <meta name="twitter:image" content="static/images/training plot 6.PNG">
   <meta name="twitter:image:alt" content="Speech Command Recognition with CNNs - Research Preview">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="Speech Command Recognition with CNNs">
+  <meta name="citation_title" content="Speech Command and Speaker Recognition with CNNs and GMMs">
   <meta name="citation_author" content="Bellenchia, Benjamin">
   <meta name="citation_author" content="Patterson, Brian">
   <meta name="citation_author" content="Dutan, Eric">
@@ -76,7 +76,7 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>Speech Command Recognition with CNNs - Benjamin Bellenchia, Brian Patterson, Eric Dutan, Kai Perez | ECE465 Machine Learning Project</title>
+  <title>Speech Command and Speaker Recognition with CNNs and GMMs - Benjamin Bellenchia, Brian Patterson, Eric Dutan, Kai Perez | ECE465 Machine Learning Project</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -116,8 +116,8 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "Speech Command Recognition with CNNs",
-    "description": "A MATLAB machine learning project that classifies spoken commands from mel spectrograms using a CNN with noise augmentation, silence detection, and unknown-input handling.",
+    "headline": "Speech Command and Speaker Recognition with CNNs and GMMs",
+    "description": "A MATLAB machine learning project that classifies spoken commands with a CNN, then identifies the speaker of the “go” command using MFCC features and GMMs.",
     "author": [
       {
         "@type": "Person",
@@ -143,9 +143,9 @@
     },
     "url": "",
     "image": "static/images/training plot 6.PNG",
-    "keywords": ["speech recognition", "command recognition", "CNN", "mel spectrograms", "MATLAB", "Google Speech Commands"],
-    "abstract": "This project presents a MATLAB-based speech command recognition system that converts one-second, 16 kHz audio clips into normalized 64 x 64 mel spectrogram images for classification with a CNN. The final model recognizes go, no, stop, and yes while handling silence and unknown inputs using noise augmentation and confidence thresholding.",
-    "citation": "Bellenchia et al., Speech Command Recognition with CNNs, UAlbany CNSE ECE465, 2026.",
+    "keywords": ["speech recognition", "speaker recognition", "command recognition", "CNN", "GMM", "MFCC", "mel spectrograms", "MATLAB", "Google Speech Commands"],
+    "abstract": "This project presents a MATLAB-based speech command and speaker recognition system. A CNN classifies one-second, 16 kHz audio clips from 64 x 64 mel spectrograms, while an added GMM stage identifies the speaker after the activation command go is detected using MFCC features.",
+    "citation": "Bellenchia et al., Speech Command and Speaker Recognition with CNNs and GMMs, UAlbany CNSE ECE465, 2026.",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
@@ -226,7 +226,7 @@
         <a href="#main-content" class="work-item" target="_blank">
           <div class="work-info">
             <h5>Code and Demo</h5>
-            <p>Live recording demo that predicts commands using the trained model.</p>
+            <p>Live recording demo that predicts commands and identifies the speaker of “go.”</p>
             <span class="work-venue">Demo</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
@@ -242,7 +242,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Speech Command Recognition with CNNs</h1>
+            <h1 class="title is-1 publication-title">Speech Command and Speaker Recognition with CNNs and GMMs</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
@@ -264,52 +264,54 @@
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="static/pdfs/ECE465_Project_Progress_Report_2.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Progress Report</span>
-                      </a>
-                    </span>
+                
+				  
+				  <div class="column has-text-centered">
+                      <div class="publication-links">
+                          <!-- TODO: Update with your arXiv paper ID -->
+                          <span class="link-block">
+                              <a href="static/pdfs/ECE465 Machine Learning Project Assignment 2.pdf" target="_blank"
+                                 class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="fas fa-file-pdf"></i>
+                                  </span>
+                                  <span>First Progress Update</span>
+                              </a>
+                          </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/ECE465 Machine Learning Project Assignment 2.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>First Update</span>
-                    </a>
-                  </span>
+                          <!-- TODO: Add your supplementary material PDF or remove this section -->
+                          <span class="link-block">
+                              <a href="static/pdfs/ECE465_Project_Progress_Report_2.pdf" target="_blank"
+                                 class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="fas fa-file-pdf"></i>
+                                  </span>
+                                  <span>Second Progress Update</span>
+                              </a>
+                          </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/Eric-Dutan/ML_Project" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+                          <!-- TODO: Replace with your GitHub repository URL -->
+                          <span class="link-block">
+                              <a href="https://github.com/Eric-Dutan/ML_Project" target="_blank"
+                                 class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="fab fa-github"></i>
+                                  </span>
+                                  <span>Code</span>
+                              </a>
+                          </span>
 
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="#" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>Demo</span>
-                </a>
-              </span>
-            </div>
+                          <!-- TODO: Update with your arXiv paper ID -->
+                          <span class="link-block">
+                              <a href="#" target="_blank"
+                                 class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="ai ai-arxiv"></i>
+                                  </span>
+                                  <span>Demo</span>
+                              </a>
+                          </span>
+                      </div>
           </div>
         </div>
       </div>
@@ -327,7 +329,7 @@
              height="100%">
       <!-- TODO: Replace with your video description -->
       <h2 class="subtitle has-text-centered">
-        Audio clips are converted into mel spectrogram images, allowing a convolutional neural network to classify spoken commands while rejecting silence and uncertain inputs.
+        Audio clips are converted into mel spectrogram images so a CNN can classify spoken commands. When the command “go” is detected, MFCC features are passed to a GMM speaker model to identify which team member spoke the activation word.
       </h2>
     </div>
   </div>
@@ -343,20 +345,26 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
             <p>
-                This project presents a MATLAB-based speech command recognition system that converts
-                one-second, 16 kHz audio clips into normalized 64 × 64 mel spectrogram images for
-                classification with a convolutional neural network (CNN). The final model, modelv5,
-                classifies the spoken commands “go,” “no,” “stop,” and “yes,” while also detecting
-                silence and using an “unknown” class to reject uncertain inputs. The dataset was split
-                into 70% training, 15% validation, and 15% testing data, with random time shifting,
-                gain variation, and background-noise augmentation added to improve robustness. The
-                final CNN uses three convolution layers with batch normalization, max pooling,
-                dropout, and fully connected classification layers. After the model predicts a command,
-                a 75% confidence threshold is used so low-confidence predictions are labeled as
-                unknown instead of being forced into a command class. This design trades a small amount
-                of clean-command accuracy for a more realistic and reliable speech-command system,
-                reaching about 91.6% validation accuracy while handling noisy, silent, and uncertain
-                inputs.
+                This project presents a MATLAB-based speech command and speaker recognition system.
+                One-second, 16 kHz audio clips are converted into normalized 64 × 64 mel spectrogram
+                images and classified with a convolutional neural network (CNN). The final CNN model,
+                modelv5, recognizes the spoken commands “go,” “no,” “stop,” and “yes,” while also
+                detecting silence and using an “unknown” class to reject uncertain inputs. The command
+                dataset was split into 70% training, 15% validation, and 15% testing data, with random
+                time shifting, gain variation, and background-noise augmentation added to improve
+                robustness.
+            </p>
+            <p>
+                The updated demo adds a second stage for speaker identification. After the CNN detects
+                the activation command <strong>“go”</strong>, the same recording is processed using
+                Mel-frequency cepstral coefficient (MFCC) features and compared against one Gaussian
+                Mixture Model (GMM) per team member. The GMM stage returns the speaker with the highest
+                log-likelihood score, while a score-gap threshold can reject uncertain speaker matches.
+                This extension turns the project from command recognition alone into a two-stage system:
+                first deciding <em>what command was spoken</em>, then identifying <em>who spoke it</em>.
+                The speaker model works best when training and demo recordings are collected with a
+                consistent microphone setup, highlighting an important real-world limitation for robust
+                voice recognition in noisy or device-variable environments.
             </p>
         </div>
       </div>
@@ -365,6 +373,29 @@
 </section>
 <!-- End paper abstract -->
 
+
+<!-- System overview -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">System Overview</h2>
+    <div class="content">
+      <p>
+        The updated pipeline uses two separate models. The CNN performs general command recognition
+        from mel spectrogram images, while the GMM stage is only activated after the command
+        <strong>go</strong> is detected. This keeps the speaker model focused on the recordings it was
+        trained for, since the speaker dataset was collected from team members saying the same
+        activation word.
+      </p>
+      <ol>
+        <li><strong>Record audio:</strong> MATLAB records a one-second, 16 kHz audio sample.</li>
+        <li><strong>Predict command:</strong> The audio is converted into a 64 × 64 mel spectrogram and classified by the CNN.</li>
+        <li><strong>Check confidence:</strong> Predictions below the confidence threshold are labeled as unknown.</li>
+        <li><strong>Identify speaker:</strong> If the command is <strong>go</strong>, MFCC features are scored with a GMM speaker model.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<!-- End system overview -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
@@ -385,6 +416,12 @@
           93.9% accuracy on the cleaner command-only task, while the final model reached about
           <strong>91.6% validation accuracy</strong> after adding noise augmentation, silence detection,
           and unknown-input rejection for a more realistic speech-command system.
+        </p>
+        <p>
+          The newest update adds a <strong>GMM speaker-recognition stage</strong> for the command
+          <strong>go</strong>. MFCC features are extracted from the live recording and scored against
+          one GMM per speaker. This allows the demo to report both the recognized command and the
+          predicted speaker.
         </p>
       </div>
       <div id="results-carousel" class="carousel results-carousel">
@@ -429,16 +466,31 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <p class="subtitle">
-            The MATLAB demo records a one-second audio sample, normalizes the signal, converts it into a 64 × 64 mel spectrogram, and passes it through the trained CNN to predict the spoken command.
+            The MATLAB demo records a one-second audio sample, normalizes the signal, converts it into a
+            64 × 64 mel spectrogram, and passes it through the trained CNN to predict the spoken command.
+            If the command is detected as <strong>go</strong>, the demo then runs a GMM speaker-recognition
+            stage to identify who spoke the activation word.
           </p>
           <div class="content has-text-left">
             <p>
-              The demo reports the predicted label and confidence score. If the model confidence is below
-              <strong>75%</strong>, the result is labeled as <strong>unknown</strong> rather than forcing the
-              recording into one of the four command classes. This helps the system reject silence,
-              background noise, or speech that does not clearly match a trained command.
+              The command classifier reports the predicted label and confidence score. If the CNN confidence
+              is below <strong>75%</strong>, the result is labeled as <strong>unknown</strong> rather than
+              forcing the recording into one of the command classes. When <strong>go</strong> is accepted,
+              MFCC features are extracted from the same audio and scored against the trained speaker GMMs.
+              The speaker with the highest log-likelihood score is selected, unless the gap between the best
+              and second-best score is too small.
             </p>
           </div>
+
+          <figure class="image">
+            <img src="static/images/Demo_Ben_Saying_Go.png"
+                 alt="MATLAB live demo showing mel spectrogram, predicted word go, and predicted speaker Ben"
+                 loading="lazy">
+          </figure>
+
+          <h2 class="subtitle has-text-centered">
+            Live demo output: the CNN identifies the command as “go,” then the MFCC-GMM speaker model identifies the speaker as Ben.
+          </h2>
         </div>
       </div>
     </div>
@@ -482,6 +534,29 @@
 
 
 
+<!-- Limitations and future work -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Limitations and Future Work</h2>
+      <div class="content">
+        <p>
+          The CNN command model includes noise augmentation and unknown-input handling, but the GMM
+          speaker model is more sensitive to recording conditions. Testing showed that microphone
+          differences can significantly affect speaker scores, because MFCC features capture both voice
+          characteristics and recording-device effects.
+        </p>
+        <p>
+          Future improvements would include collecting speaker recordings from multiple microphones,
+          adding more background-noise augmentation, testing in busier acoustic environments, and
+          comparing the GMM approach against more advanced speaker-embedding methods.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End limitations and future work -->
+
 <!-- Paper poster -->
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -509,12 +584,13 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@misc{BellenchiaSpeechCommand2026,
-  title={Speech Command Recognition with CNNs},
+      <pre id="bibtex-code"><code>@misc{BellenchiaSpeechCommandSpeaker2026,
+  title={Speech Command and Speaker Recognition with CNNs and GMMs},
   author={Bellenchia, Benjamin and Patterson, Brian and Dutan, Eric and Perez, Kai},
   howpublished={UAlbany CNSE ECE465 Machine Learning Project},
   year={2026},
-  note={MATLAB implementation using mel spectrograms, CNN classification, noise augmentation, silence detection, and unknown-input handling}
+  note={MATLAB implementation using CNN command classification and GMM speaker recognition}
+}
 }</code></pre>
     </div>
 </section>
